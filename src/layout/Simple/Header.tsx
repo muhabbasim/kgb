@@ -24,12 +24,12 @@ import useScrollTrigger from '@mui/material/useScrollTrigger';
 import { APP_DEFAULT_PATH, ThemeDirection } from 'config';
 import IconButton from 'components/@extended/IconButton';
 import AnimateButton from 'components/@extended/AnimateButton';
-import Logo from 'components/logo';
 import { handlerComponentDrawer, useGetMenuMaster } from 'api/menu';
 
 // assets
 import { DocumentDownload, ExportSquare, HambergerMenu, Minus } from 'iconsax-react';
-
+import logo from 'assets/images/logo.png'
+import { Avatar } from '@mui/material';
 interface ElevationScrollProps {
   layout: string;
   children: ReactElement;
@@ -98,15 +98,13 @@ export default function Header({ layout = 'landing', ...others }: Props) {
         <Container maxWidth="xl" disableGutters={matchDownMd}>
           <Toolbar sx={{ px: { xs: 1.5, sm: 4, md: 0, lg: 0 }, py: 1 }}>
             <Stack direction="row" sx={{ flexGrow: 1, display: { xs: 'none', md: 'block' } }} alignItems="center">
-              <Typography sx={{ textAlign: 'left', display: 'inline-block' }}>
+              {/* <Typography sx={{ textAlign: 'left', display: 'inline-block' }}>
                 <Logo to="/" />
-              </Typography>
-              <Chip
-                label={import.meta.env.VITE_APP_VERSION}
-                variant="outlined"
-                size="small"
-                color="secondary"
-                sx={{ mt: 0.5, ml: 1, fontSize: '0.725rem', height: 20, '& .MuiChip-label': { px: 0.5 } }}
+              </Typography> */}
+              <img 
+                src="src/assets/images/kgb-logo2.png" 
+                style={{ width: '120px'}}
+                alt="" 
               />
             </Stack>
             <Stack
@@ -160,22 +158,6 @@ export default function Header({ layout = 'landing', ...others }: Props) {
                   <DocumentDownload />
                 </IconButton>
               </Link>
-              <Box sx={{ display: 'inline-block' }}>
-                <AnimateButton>
-                  <Button
-                    component={Link}
-                    href={url}
-                    target="_blank"
-                    disableElevation
-                    startIcon={<ExportSquare />}
-                    color="success"
-                    size="large"
-                    variant="contained"
-                  >
-                    Purchase Now
-                  </Button>
-                </AnimateButton>
-              </Box>
             </Stack>
             <Box
               sx={{
@@ -185,9 +167,9 @@ export default function Header({ layout = 'landing', ...others }: Props) {
                 display: { xs: 'flex', md: 'none' }
               }}
             >
-              <Typography sx={{ textAlign: 'left', display: 'inline-block' }}>
+              {/* <Typography sx={{ textAlign: 'left', display: 'inline-block' }}>
                 <Logo to="/" />
-              </Typography>
+              </Typography> */}
               <Stack direction="row" spacing={2}>
                 {layout === 'component' && (
                   <Button variant="outlined" color="warning" component={RouterLink} to={APP_DEFAULT_PATH} sx={{ mt: 0.25 }}>

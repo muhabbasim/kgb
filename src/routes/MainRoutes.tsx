@@ -315,13 +315,6 @@ const MainRoutes = {
     },
     {
       path: '/', 
-      element: <SimpleLayout layout={SimpleLayoutType.LANDING} />,
-      children: [
-        { path: 'landing', element: <Landing /> }
-      ]
-    },
-    {
-      path: '/', 
       element: <SimpleLayout layout={SimpleLayoutType.SIMPLE} />,
       children: [
         { path: 'contact-us', element: <ContactUS /> }
@@ -357,6 +350,13 @@ const MainRoutes = {
         { path: 'check-mail2', element: <AuthCheckMail2 /> },
         { path: 'code-verification2', element: <AuthCodeVerification2 /> },
         { path: 'login3', element: <AuthLogin3 />}
+      ]
+    },
+    {
+      path: '/', 
+      element: <SimpleLayout layout={SimpleLayoutType.LANDING} />,
+      children: [
+        { path: 'landing', element: <Landing /> }
       ]
     },
     { path: '*', element: <MaintenanceError /> } ]
