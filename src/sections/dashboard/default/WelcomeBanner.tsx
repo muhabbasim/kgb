@@ -13,6 +13,7 @@ import { ThemeMode } from 'config';
 //asset
 import WelcomeImage from 'assets/images/analytics/welcome-banner.png';
 import cardBack from 'assets/images/widget/img-dropbox-bg.svg';
+import Translatable from 'components/translatable-text/Translatable';
 
 // ==============================|| ANALYTICS - WELCOME ||============================== //
 
@@ -42,7 +43,7 @@ export default function WelcomeBanner() {
         <Grid item md={6} sm={6} xs={12}>
           <Stack spacing={2} sx={{ padding: 3 }}>
             <Typography variant="h2" color={theme.palette.background.paper}>
-              Explore Redesigned Able Pro
+              <Translatable text='Explore Redesigned Able Pro'/>
             </Typography>
             <Typography variant="h6" color={theme.palette.background.paper}>
               The Brand new User Interface with power of Material-UI Components. Explore the Endless possibilities with Able Pro.

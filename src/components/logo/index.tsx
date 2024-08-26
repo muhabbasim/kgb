@@ -10,7 +10,6 @@ import Logo from './LogoMain';
 import LogoIcon from './LogoIcon';
 import useAuth from 'hooks/useAuth';
 import { APP_DEFAULT_PATH } from 'config';
-
 interface Props {
   isIcon?: boolean;
   sx?: SxProps;
@@ -24,7 +23,7 @@ export default function LogoSection({ isIcon, sx, to }: Props) {
 
   return (
     <ButtonBase disableRipple {...(isLoggedIn && { component: Link, to: !to ? APP_DEFAULT_PATH : to, sx })}>
-      {isIcon ? <LogoIcon /> : <Logo />}
+      {isIcon ? <LogoIcon /> : <Logo />} 
     </ButtonBase>
   );
 }

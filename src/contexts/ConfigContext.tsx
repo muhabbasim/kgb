@@ -31,7 +31,7 @@ type ConfigProviderProps = {
 };
 
 function ConfigProvider({ children }: ConfigProviderProps) {
-  const [config, setConfig] = useLocalStorage('able-pro-material-react-ts-config', initialState);
+  const [config, setConfig] = useLocalStorage('kgp-storage', initialState);
 
   const onChangeContainer = () => {
     setConfig({

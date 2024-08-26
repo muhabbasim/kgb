@@ -26,6 +26,7 @@ import { LanguageSquare } from 'iconsax-react';
 
 // types
 import { I18n } from 'types/config';
+import { ThemeDirection } from 'config';
 
 // ==============================|| HEADER CONTENT - LOCALIZATION ||============================== //
 
@@ -33,7 +34,7 @@ export default function Localization() {
   const theme = useTheme();
   const matchesXs = useMediaQuery(theme.breakpoints.down('md'));
 
-  const { mode, i18n, onChangeLocalization } = useConfig();
+  const { mode, i18n, onChangeLocalization, themeDirection, onChangeDirection } = useConfig();
 
   const anchorRef = useRef<any>(null);
   const [open, setOpen] = useState(false);
@@ -50,6 +51,7 @@ export default function Localization() {
 
   const handleListItemClick = (lang: I18n) => {
     onChangeLocalization(lang);
+
     setOpen(false);
   };
 
@@ -117,7 +119,19 @@ export default function Localization() {
                         }
                       />
                     </ListItemButton>
-                    <ListItemButton selected={i18n === 'fr'} onClick={() => handleListItemClick('fr')}>
+                    <ListItemButton selected={i18n === 'ar'} onClick={() => handleListItemClick('ar')}>
+                      <ListItemText
+                        primary={
+                          <Grid container>
+                            <Typography color="text.primary">Arabic</Typography>
+                            <Typography variant="caption" color="text.secondary" sx={{ ml: '8px' }}>
+                              (AR)
+                            </Typography>
+                          </Grid>
+                        }
+                      />
+                    </ListItemButton>
+                    {/* <ListItemButton selected={i18n === 'fr'} onClick={() => handleListItemClick('fr')}>
                       <ListItemText
                         primary={
                           <Grid container>
@@ -152,7 +166,7 @@ export default function Localization() {
                           </Grid>
                         }
                       />
-                    </ListItemButton>
+                    </ListItemButton> */}
                   </List>
                 </MainCard>
               </ClickAwayListener>
